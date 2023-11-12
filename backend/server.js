@@ -1,6 +1,6 @@
 const express=require("express");
 const cors=require("cors");
-const lowDb=require("lowdb");
+const lowDb =require("lowdb");
 const FileSync=require("lowdb/adapters/FileSync");
 const bodyParser=require("body-parser");
 const {nanoid,customAlphabet}=require("nanoid");
@@ -8,7 +8,8 @@ var dayjs=require("dayjs");
 const db=lowDb(new FileSync("db.json"));
 const app = express();
 const random_data=require("./random_data");
-var utc=require("dayjs/plugin/timezone");
+var utc=require("dayjs/plugin/utc");
+var timezone=require("dayjs/plugin/timezone");
 dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.tz.setDefault("Asia/Kolkata");
